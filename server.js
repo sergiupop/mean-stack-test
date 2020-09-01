@@ -45,7 +45,7 @@ app.post("/api/contacts", function(req, res) {
     newContact.createDate = new Date();
 
     if (!req.body.name) {
-        handleError(res, "Invalid user input", "Must provide a name.", 400);
+        handleError(res, "Invalid user input", req.body, 400);
     } else {
         db.collection(CONTACTS_COLLECTION).insertOne(newContact, function(err, doc) {
             if (err) {
