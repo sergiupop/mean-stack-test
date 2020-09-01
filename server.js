@@ -24,3 +24,28 @@ mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:2701
         console.log("App now running on port", port);
     });
 });
+
+function handleError(res, reason, message, code) {
+    console.log("Error: " + reason);
+    res.status(code || 500).json({"error": message});
+}
+
+app.get("/api/contacts", function(req, res) {
+
+});
+
+app.post("/api/contacts", function(req, res) {
+
+});
+
+app.get("/api/contacts/:id", function(req, res) {
+
+});
+
+app.put("/api/contacts/:id", function(req, res) {
+
+});
+
+app.delete("/api/contacts/:id", function(req, res) {
+
+});
