@@ -8,6 +8,9 @@ var CONTACTS_COLLECTION = "contacts";
 var app = express();
 app.use(bodyParser.json());
 
+var distDir = __dirname + "/dist/";
+app.use(express.static(distDir));
+
 var db;
 
 mongodb.MongoClient.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/test", function(err, client) {
